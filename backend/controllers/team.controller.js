@@ -13,9 +13,9 @@ class TeamController {
     }
 
     async getTeamById(req, res) {
-        const id = req.params.id
-        const teams = await db.query(`SELECT * FROM teams WHERE id = $1`, [id]);
-        res.json(teams.rows[0]);
+        const id = req.params.id;
+        const team = await db.query(`SELECT * FROM teams WHERE id = $1`, [id]);
+        res.json(team.rows[0]);
     }
 
     async updateTeam(req, res) {
